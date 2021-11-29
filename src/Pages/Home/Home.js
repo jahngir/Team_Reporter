@@ -7,11 +7,10 @@ function Home() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        auth.onAuthStateChanged(() => {
+        
             auth.signOut();
             navigate("/login");
-        })
-    }
+            }
 
     const CurrentUser = () => {
         const [user, loading, error] = useAuthState(auth);
